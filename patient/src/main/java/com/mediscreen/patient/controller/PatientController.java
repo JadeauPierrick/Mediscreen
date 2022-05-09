@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -40,7 +41,7 @@ public class PatientController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<PatientDTO> addPatient(@RequestBody PatientDTO patientDTO) {
+    public ResponseEntity<PatientDTO> addPatient(@Valid @RequestBody PatientDTO patientDTO) {
         try {
             PatientDTO newPatient = patientService.addPatient(patientDTO);
             return new ResponseEntity<>(newPatient,HttpStatus.OK);
@@ -50,7 +51,7 @@ public class PatientController {
     }
 
     @PostMapping("/update/{id}")
-    public ResponseEntity<PatientDTO> updatePatient(@PathVariable("id") Integer id, @RequestBody PatientDTO patientDTO) throws Exception {
+    public ResponseEntity<PatientDTO> updatePatient(@PathVariable("id") Integer id, @Valid @RequestBody PatientDTO patientDTO) throws Exception {
         try {
             PatientDTO patientUpdated = patientService.updatePatient(id, patientDTO);
             return new ResponseEntity<>(patientUpdated,HttpStatus.OK);

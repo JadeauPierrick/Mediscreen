@@ -3,41 +3,43 @@ package com.mediscreen.patient.service;
 import com.mediscreen.patient.dto.PatientDTO;
 import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
-import com.mediscreen.patient.mapper.DTOMapper;
+import com.mediscreen.patient.mapper.PatientMapper;
 import com.mediscreen.patient.model.Patient;
 import com.mediscreen.patient.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class PatientServiceImpl implements PatientService{
 
-    @Autowired
-    private PatientRepository patientRepository;
+    private final PatientRepository patientRepository;
+
+    private final PatientMapper patientMapper;
 
     @Autowired
-    private DTOMapper dtoMapper;
+    public PatientServiceImpl(PatientRepository patientRepository, PatientMapper patientMapper) {
+        this.patientRepository = patientRepository;
+        this.patientMapper = patientMapper;
+    }
 
     @Override
     public List<PatientDTO> getPatients() {
         List<Patient> patients = patientRepository.findAll();
-        List<PatientDTO> patientDTOList = new ArrayList<>();
-
-        patients.forEach(patient -> patientDTOList.add(dtoMapper.mapPatientToDTO(patient)));
-
-        return patientDTOList;
+        return patients.stream().map(patientMapper::toDTO).collect(Collectors.toList());
     }
 
     @Override
     public PatientDTO getPatientById(Integer id) throws PatientNotFoundException {
         Optional<Patient> patient = patientRepository.findById(id);
         if (patient.isPresent()) {
-            return dtoMapper.mapPatientToDTO(patient.get());
+            return patientMapper.toDTO(patient.get());
         }else {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
         }
@@ -47,7 +49,7 @@ public class PatientServiceImpl implements PatientService{
     public PatientDTO getPatientByLastNameAndFirstNameAndBirthdate(String lastName, String firstName, LocalDate birthdate) throws PatientNotFoundException {
         Optional<Patient> patient = patientRepository.findByLastNameAndFirstNameAndBirthdate(lastName,firstName,birthdate);
         if (patient.isPresent()) {
-            return dtoMapper.mapPatientToDTO(patient.get());
+            return patientMapper.toDTO(patient.get());
         }else {
             throw new PatientNotFoundException("The patient with these informations : " + lastName + " " + firstName + " " + birthdate + " was not found");
         }
@@ -59,7 +61,7 @@ public class PatientServiceImpl implements PatientService{
         if (currentPatient.isPresent()) {
             throw new PatientAlreadyExistingException("The patient is already exist");
         } else {
-            Patient newPatient = dtoMapper.mapDTOToPatient(patientDTO);
+            Patient newPatient = patientMapper.fromDTO(patientDTO);
             patientRepository.save(newPatient);
             return patientDTO;
         }
@@ -71,7 +73,7 @@ public class PatientServiceImpl implements PatientService{
         if (!patient.isPresent()) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
         } else {
-            Patient patientUpdated = dtoMapper.mapDTOToPatient(patientDTO);
+            Patient patientUpdated = patientMapper.fromDTO(patientDTO);
             patientRepository.save(patientUpdated);
             return patientDTO;
         }

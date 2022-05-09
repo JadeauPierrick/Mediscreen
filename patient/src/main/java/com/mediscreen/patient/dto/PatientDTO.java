@@ -1,28 +1,33 @@
 package com.mediscreen.patient.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mediscreen.patient.constants.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class PatientDTO {
+@Value
+@Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class PatientDTO implements Serializable {
 
-    private int id;
+    int id;
 
-    private String lastName;
+    @NotBlank
+    String lastName;
 
-    private String firstName;
+    @NotBlank
+    String firstName;
 
-    private LocalDate birthdate;
+    @NotBlank
+    LocalDate birthdate;
 
-    private Gender sex;
+    @NotBlank
+    Gender sex;
 
-    private String address;
+    String address;
 
-    private String phone;
+    String phone;
 }

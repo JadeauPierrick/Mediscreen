@@ -4,6 +4,8 @@ import com.mediscreen.patient.constants.Gender;
 import com.mediscreen.patient.dto.PatientDTO;
 import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
+import com.mediscreen.patient.mapper.PatientMapper;
+import com.mediscreen.patient.model.Patient;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +14,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 
 @SpringBootTest
@@ -20,18 +21,30 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PatientServiceTest {
 
+
+    private final PatientService patientService;
+
+    private final PatientMapper patientMapper;
+
     @Autowired
-    private PatientService patientService;
+    public PatientServiceTest(PatientService patientService, PatientMapper patientMapper) {
+        this.patientService = patientService;
+        this.patientMapper = patientMapper;
+    }
 
     private PatientDTO patient;
 
     @BeforeAll
     private void setUp() {
-        patient = new PatientDTO();
-        patient.setLastName("Garrix");
-        patient.setFirstName("Martin");
-        patient.setBirthdate(LocalDate.of(1996, 5,14));
-        patient.setSex(Gender.M);
+        patient = PatientDTO.builder()
+                .id(21)
+                .lastName("Garrix")
+                .firstName("Martin")
+                .birthdate(LocalDate.of(1996,5,14))
+                .sex(Gender.M)
+                .address("5 St Holland")
+                .phone("999-999-999")
+                .build();
     }
 
     @Test
@@ -40,21 +53,14 @@ public class PatientServiceTest {
         patientService.addPatient(patient);
         List<PatientDTO> patients = patientService.getPatients();
 
-        assertNotNull(patient.getId());
         assertThat(patients.get(5).getLastName()).isEqualTo("Garrix");
     }
 
     @Test
     @Order(2)
     public void savePatientWithExistingPatient() {
-        PatientDTO patientDTO = new PatientDTO();
-        patientDTO.setLastName("Cartier");
-        patientDTO.setFirstName("Denis");
-        patientDTO.setBirthdate(LocalDate.of(1982,5,3));
-        patientDTO.setSex(Gender.M);
-
         try {
-            patientService.addPatient(patientDTO);
+            patientService.addPatient(patient);
         } catch (PatientAlreadyExistingException e) {
             assertThat(e.getMessage()).contains("The patient is already exist");
         }
@@ -105,9 +111,10 @@ public class PatientServiceTest {
     @Order(8)
     public void updatePatient() throws PatientNotFoundException {
         PatientDTO patientDTO = patientService.getPatientById(6);
-        patientDTO.setAddress("6 St Sun");
+        Patient patient = patientMapper.fromDTO(patientDTO);
+        patient.setAddress("6 St Sun");
 
-        patientService.updatePatient(6,patientDTO);
+        patientService.updatePatient(6,patientMapper.toDTO(patient));
         List<PatientDTO> patients = patientService.getPatients();
 
         assertThat(patients.get(5).getAddress()).isEqualTo("6 St Sun");

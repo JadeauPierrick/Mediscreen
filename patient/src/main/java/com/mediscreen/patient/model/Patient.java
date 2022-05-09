@@ -21,6 +21,7 @@ public class Patient implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @NotBlank(message = "The last name is required")
@@ -32,16 +33,17 @@ public class Patient implements Serializable {
     private String firstName;
 
     @NotBlank(message = "The birthdate is required")
+    @Column(name = "birthdate")
     private LocalDate birthdate;
 
     @NotBlank(message = "The gender is required")
-    @Column(length = 1)
+    @Column(name = "sex", length = 1)
     @Enumerated(EnumType.STRING)
     private Gender sex;
 
-    @Column(length = 200)
+    @Column(name = "address", length = 200)
     private String address;
 
-    @Column(length = 50)
+    @Column(name = "phone", length = 50)
     private String phone;
 }
