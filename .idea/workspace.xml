@@ -6,6 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_4_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_4_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_sync_4_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_2_6_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_3_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_3_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_3_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_3_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_3_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_3_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/DatabaseSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/Note.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/repository/NoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/NoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/SequenceGeneratorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -14,7 +29,11 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,6 +81,26 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
+  <component name="RunManager">
+    <configuration name="PatientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.PatientApplication" />
+      <module name="patient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mediscreen.patient.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PatientApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,5 +125,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
