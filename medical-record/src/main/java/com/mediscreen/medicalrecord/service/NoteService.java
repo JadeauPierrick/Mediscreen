@@ -11,7 +11,7 @@ public interface NoteService {
 
     NoteDTO getNoteById(Long id) throws NoteNotFoundException;
 
-    List<NoteDTO> getAllNotesByPatientId(Integer patientId);
+    List<NoteDTO> getAllNotesByPatientId(Long patientId);
 
     NoteDTO addNote(NoteDTO noteDTO);
 

@@ -6,6 +6,7 @@ import com.mediscreen.patient.exceptions.PatientNotFoundException;
 import com.mediscreen.patient.mapper.PatientMapper;
 import com.mediscreen.patient.model.Patient;
 import com.mediscreen.patient.repository.PatientRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Transactional
 @Service
+@Slf4j
 public class PatientServiceImpl implements PatientService{
 
     private final PatientRepository patientRepository;
@@ -37,22 +39,22 @@ public class PatientServiceImpl implements PatientService{
 
     @Override
     public PatientDTO getPatientById(Integer id) throws PatientNotFoundException {
-        Optional<Patient> patient = patientRepository.findById(id);
-        if (patient.isPresent()) {
-            return patientMapper.toDTO(patient.get());
-        }else {
+        Patient patient = patientRepository.findById(id).orElse(null);
+        if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
         }
+        log.info("The patient was successfully found with the id : {}", id);
+        return patientMapper.toDTO(patient);
     }
 
     @Override
     public PatientDTO getPatientByLastNameAndFirstNameAndBirthdate(String lastName, String firstName, LocalDate birthdate) throws PatientNotFoundException {
-        Optional<Patient> patient = patientRepository.findByLastNameAndFirstNameAndBirthdate(lastName,firstName,birthdate);
-        if (patient.isPresent()) {
-            return patientMapper.toDTO(patient.get());
-        }else {
-            throw new PatientNotFoundException("The patient with these informations : " + lastName + " " + firstName + " " + birthdate + " was not found");
+        Patient patient = patientRepository.findByLastNameAndFirstNameAndBirthdate(lastName,firstName,birthdate).orElse(null);
+        if (patient == null) {
+            throw new PatientNotFoundException("The patient with these information : " + lastName + " " + firstName + " " + birthdate + " was not found");
         }
+        log.info("The patient was successfully found with these information : {} {} {}", lastName, firstName, birthdate);
+        return patientMapper.toDTO(patient);
     }
 
     @Override
@@ -60,32 +62,30 @@ public class PatientServiceImpl implements PatientService{
         Optional<Patient> currentPatient = patientRepository.findByLastNameAndFirstNameAndBirthdate(patientDTO.getLastName(), patientDTO.getFirstName(), patientDTO.getBirthdate());
         if (currentPatient.isPresent()) {
             throw new PatientAlreadyExistingException("The patient is already exist");
-        } else {
-            Patient newPatient = patientMapper.fromDTO(patientDTO);
-            patientRepository.save(newPatient);
-            return patientDTO;
         }
+        Patient newPatient = patientMapper.fromDTO(patientDTO);
+        log.info("The patient was successfully created");
+        return patientMapper.toDTO(patientRepository.save(newPatient));
     }
 
     @Override
     public PatientDTO updatePatient(Integer id, PatientDTO patientDTO) throws PatientNotFoundException {
-        Optional<Patient> patient = patientRepository.findById(id);
-        if (!patient.isPresent()) {
+        Patient patient = patientRepository.findById(id).orElse(null);
+        if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
-        } else {
-            Patient patientUpdated = patientMapper.fromDTO(patientDTO);
-            patientRepository.save(patientUpdated);
-            return patientDTO;
         }
+        Patient patientUpdated = patientMapper.fromDTO(patientDTO);
+        log.info("The patient was successfully updated");
+        return patientMapper.toDTO(patientRepository.save(patientUpdated));
     }
 
     @Override
     public void deletePatientById(Integer id) throws PatientNotFoundException {
-        Optional<Patient> patient = patientRepository.findById(id);
-        if (patient.isPresent()) {
-            patientRepository.deleteById(id);
-        } else {
+        Patient patient = patientRepository.findById(id).orElse(null);
+        if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
         }
+        log.info("The patient was successfully deleted");
+        patientRepository.deleteById(id);
     }
 }
