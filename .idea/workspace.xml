@@ -7,6 +7,7 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/test/java/com/mediscreen/medicalrecord/service/NoteServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -16,27 +17,8 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/_mdb_catalog.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/_mdb_catalog.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-0-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-4-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-1-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-3-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-5-7569324288038121640.wt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000004" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/mongod.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/NoteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerPreplog.0000000001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerPreplog.0000000002" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +66,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager" selected="Application.MedicalRecordApplication">
+  <component name="RunManager" selected="JUnit.NoteServiceTest">
     <configuration name="MedicalRecordApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mediscreen.medicalrecord.MedicalRecordApplication" />
       <module name="medical-record" />
@@ -98,15 +80,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PatientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.PatientApplication" />
-      <module name="patient" />
+    <configuration name="NoteServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="medical-record" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mediscreen.patient.*" />
+          <option name="PATTERN" value="com.mediscreen.medicalrecord.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.mediscreen.medicalrecord.service" />
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.medicalrecord.service.NoteServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NoteServiceTest" />
         <item itemvalue="Application.MedicalRecordApplication" />
         <item itemvalue="Docker.medical-record: Compose Deployment" />
         <item itemvalue="Docker.medical-record.mongo-express: Compose Deployment" />
         <item itemvalue="JUnit.PatientServiceTest" />
-        <item itemvalue="Application.PatientApplication" />
       </list>
     </recent_temporary>
   </component>
