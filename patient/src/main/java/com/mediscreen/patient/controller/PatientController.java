@@ -4,6 +4,7 @@ import com.mediscreen.patient.dto.PatientDTO;
 import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
 import com.mediscreen.patient.service.PatientService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/patient")
+@Slf4j
 public class PatientController {
 
     private final PatientService patientService;
@@ -36,6 +38,7 @@ public class PatientController {
             PatientDTO patient = patientService.getPatientById(id);
             return new ResponseEntity<>(patient,HttpStatus.OK);
         } catch (PatientNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -46,6 +49,7 @@ public class PatientController {
             PatientDTO newPatient = patientService.addPatient(patientDTO);
             return new ResponseEntity<>(newPatient,HttpStatus.OK);
         } catch (PatientAlreadyExistingException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
@@ -56,6 +60,7 @@ public class PatientController {
             PatientDTO patientUpdated = patientService.updatePatient(id, patientDTO);
             return new ResponseEntity<>(patientUpdated,HttpStatus.OK);
         } catch (PatientNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -66,6 +71,7 @@ public class PatientController {
             patientService.deletePatientById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (PatientNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -26,13 +28,18 @@ public class Note implements Serializable {
     private long id;
 
     @NotNull(message = "The patient id is required")
+    @Field(name = "patientId")
     private int patientId;
 
     @CreatedDate
+    @Field(name = "createdAt")
     private LocalDateTime createdAt;
 
+    @LastModifiedDate
+    @Field(name = "updatedAt")
     private LocalDateTime updatedAt;
 
     @NotBlank(message = "The content is required")
+    @Field(name = "content")
     private String content;
 }

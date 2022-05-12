@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,6 +62,8 @@ public class NoteServiceImpl implements NoteService{
     public NoteDTO addNote(NoteDTO noteDTO) {
         Note noteCreated = noteMapper.fromDTO(noteDTO);
         noteCreated.setId(sequenceGeneratorService.generateSequence(Note.SEQUENCE_NAME));
+        noteCreated.setCreatedAt(LocalDateTime.now(ZoneOffset.UTC).withNano(0));
+        noteCreated.setUpdatedAt(LocalDateTime.now(ZoneOffset.UTC).withNano(0));
         log.info("The note was successfully created");
         return noteMapper.toDto(noteRepository.save(noteCreated));
     }
@@ -70,6 +75,8 @@ public class NoteServiceImpl implements NoteService{
             throw new NoteNotFoundException("The note with the id : " + id + " was not found");
         }
         Note noteUpdated = noteMapper.fromDTO(noteDTO);
+        noteUpdated.setCreatedAt(note.getCreatedAt());
+        noteUpdated.setUpdatedAt(LocalDateTime.now(ZoneOffset.UTC).withNano(0));
         log.info("The note was successfully updated");
         return noteMapper.toDto(noteRepository.save(noteUpdated));
     }

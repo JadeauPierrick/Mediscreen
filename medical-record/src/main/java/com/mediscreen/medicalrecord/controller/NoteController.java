@@ -3,6 +3,7 @@ package com.mediscreen.medicalrecord.controller;
 import com.mediscreen.medicalrecord.dto.NoteDTO;
 import com.mediscreen.medicalrecord.exceptions.NoteNotFoundException;
 import com.mediscreen.medicalrecord.service.NoteService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/note")
+@Slf4j
 public class NoteController {
 
     private final NoteService noteService;
@@ -35,6 +37,7 @@ public class NoteController {
             NoteDTO noteDTO = noteService.getNoteById(id);
             return new ResponseEntity<>(noteDTO,HttpStatus.OK);
         } catch (NoteNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -57,6 +60,7 @@ public class NoteController {
             NoteDTO noteUpdated = noteService.updateNote(id,noteDTO);
             return new ResponseEntity<>(noteUpdated,HttpStatus.OK);
         } catch (NoteNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -67,6 +71,7 @@ public class NoteController {
             noteService.deleteNoteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoteNotFoundException e) {
+            log.info(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
