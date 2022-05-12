@@ -7,7 +7,6 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record/src/test/java/com/mediscreen/medicalrecord/service/NoteServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -17,8 +16,7 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerPreplog.0000000001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerPreplog.0000000002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/service/NoteServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
