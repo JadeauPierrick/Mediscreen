@@ -7,6 +7,7 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -16,7 +17,9 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/model/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +67,20 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager" selected="JUnit.PatientServiceTest">
+  <component name="RunManager" selected="Application.MedicalRecordApplication">
+    <configuration name="MedicalRecordApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.medicalrecord.MedicalRecordApplication" />
+      <module name="medical-record" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mediscreen.medicalrecord.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PatientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.PatientApplication" />
       <module name="patient" />
@@ -93,8 +109,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="medical-record: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="medical-record/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="medical-record.mongo-express: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mongo-express" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="medical-record/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MedicalRecordApplication" />
+        <item itemvalue="Docker.medical-record: Compose Deployment" />
+        <item itemvalue="Docker.medical-record.mongo-express: Compose Deployment" />
         <item itemvalue="JUnit.PatientServiceTest" />
         <item itemvalue="Application.PatientApplication" />
       </list>
