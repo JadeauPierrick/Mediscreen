@@ -8,16 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="medical-record" />
+        <module name="assessment" />
         <module name="patient" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="assessment" target="1.8" />
       <module name="medical-record" target="1.8" />
       <module name="patient" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="assessment" options="-parameters" />
       <module name="medical-record" options="-parameters" />
       <module name="patient" options="-parameters" />
     </option>

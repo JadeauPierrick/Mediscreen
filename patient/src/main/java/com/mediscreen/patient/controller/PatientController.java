@@ -55,7 +55,7 @@ public class PatientController {
     }
 
     @PostMapping("/update/{id}")
-    public ResponseEntity<PatientDTO> updatePatient(@PathVariable("id") Integer id, @Valid @RequestBody PatientDTO patientDTO) throws Exception {
+    public ResponseEntity<PatientDTO> updatePatient(@PathVariable("id") Integer id, @Valid @RequestBody PatientDTO patientDTO) {
         try {
             PatientDTO patientUpdated = patientService.updatePatient(id, patientDTO);
             return new ResponseEntity<>(patientUpdated,HttpStatus.OK);
