@@ -38,7 +38,7 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
-    public PatientDTO getPatientById(Integer id) throws PatientNotFoundException {
+    public PatientDTO getPatientById(Long id) throws PatientNotFoundException {
         Patient patient = patientRepository.findById(id).orElse(null);
         if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
@@ -69,7 +69,7 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
-    public PatientDTO updatePatient(Integer id, PatientDTO patientDTO) throws PatientNotFoundException {
+    public PatientDTO updatePatient(Long id, PatientDTO patientDTO) throws PatientNotFoundException {
         Patient patient = patientRepository.findById(id).orElse(null);
         if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");
@@ -80,7 +80,7 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
-    public void deletePatientById(Integer id) throws PatientNotFoundException {
+    public void deletePatientById(Long id) throws PatientNotFoundException {
         Patient patient = patientRepository.findById(id).orElse(null);
         if (patient == null) {
             throw new PatientNotFoundException("The patient with the id : " + id + " was not found");

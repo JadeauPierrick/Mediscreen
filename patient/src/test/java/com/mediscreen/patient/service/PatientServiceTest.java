@@ -37,7 +37,7 @@ public class PatientServiceTest {
     @BeforeAll
     private void setUp() {
         patient = PatientDTO.builder()
-                .id(21)
+                .id(21L)
                 .lastName("Garrix")
                 .firstName("Martin")
                 .birthdate(LocalDate.of(1996,5,14))
@@ -76,7 +76,7 @@ public class PatientServiceTest {
     @Test
     @Order(4)
     public void getPatientById() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(6);
+        PatientDTO patientDTO = patientService.getPatientById(6L);
         assertThat(patientDTO.getId()).isEqualTo(6);
     }
 
@@ -84,7 +84,7 @@ public class PatientServiceTest {
     @Order(5)
     public void getPatientWithNullId() {
         try {
-            patientService.getPatientById(10);
+            patientService.getPatientById(10L);
         } catch (PatientNotFoundException e) {
             assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
         }
@@ -110,11 +110,11 @@ public class PatientServiceTest {
     @Test
     @Order(8)
     public void updatePatient() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(6);
+        PatientDTO patientDTO = patientService.getPatientById(6L);
         Patient patient = patientMapper.fromDTO(patientDTO);
         patient.setAddress("6 St Sun");
 
-        patientService.updatePatient(6,patientMapper.toDTO(patient));
+        patientService.updatePatient(6L,patientMapper.toDTO(patient));
         List<PatientDTO> patients = patientService.getPatients();
 
         assertThat(patients.get(5).getAddress()).isEqualTo("6 St Sun");
@@ -124,7 +124,7 @@ public class PatientServiceTest {
     @Order(9)
     public void updatePatientWithNullId() {
         try {
-            patientService.updatePatient(10,patient);
+            patientService.updatePatient(10L,patient);
         } catch (PatientNotFoundException e) {
             assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
         }
@@ -133,7 +133,7 @@ public class PatientServiceTest {
     @Test
     @Order(10)
     public void deletePatient() throws PatientNotFoundException {
-        patientService.deletePatientById(6);
+        patientService.deletePatientById(6L);
         List<PatientDTO> patients = patientService.getPatients();
 
         assertThat(patients.size()).isEqualTo(5);
@@ -143,7 +143,7 @@ public class PatientServiceTest {
     @Order(11)
     public void deletePatientWithNullId() {
         try {
-            patientService.deletePatientById(10);
+            patientService.deletePatientById(10L);
         } catch (PatientNotFoundException e) {
             assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
         }

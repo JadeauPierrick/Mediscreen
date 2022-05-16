@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 @Repository
-public interface PatientRepository extends JpaRepository<Patient,Integer> {
+public interface PatientRepository extends JpaRepository<Patient,Long> {
 
     Optional<Patient> findByLastNameAndFirstNameAndBirthdate(String lastName, String firstName, LocalDate birthdate);
 }

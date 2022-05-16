@@ -7,14 +7,9 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/constants/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/NoteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/PatientDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/model/RiskLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/model/TriggerTerms.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/MedicalRecordProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/Assessment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/utils/AgeCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -23,17 +18,18 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assessment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/AssessmentApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/AssessmentApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/PatientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

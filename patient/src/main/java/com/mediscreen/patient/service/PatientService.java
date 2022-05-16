@@ -11,13 +11,13 @@ public interface PatientService {
 
     List<PatientDTO> getPatients();
 
-    PatientDTO getPatientById(Integer id) throws PatientNotFoundException;
+    PatientDTO getPatientById(Long id) throws PatientNotFoundException;
 
     PatientDTO getPatientByLastNameAndFirstNameAndBirthdate(String lastName, String firstName, LocalDate birthdate) throws PatientNotFoundException;
 
     PatientDTO addPatient(PatientDTO patientDTO) throws PatientAlreadyExistingException;
 
-    PatientDTO updatePatient(Integer id, PatientDTO patientDTO) throws PatientNotFoundException;
+    PatientDTO updatePatient(Long id, PatientDTO patientDTO) throws PatientNotFoundException;
 
-    void deletePatientById(Integer id) throws PatientNotFoundException;
+    void deletePatientById(Long id) throws PatientNotFoundException;
 }

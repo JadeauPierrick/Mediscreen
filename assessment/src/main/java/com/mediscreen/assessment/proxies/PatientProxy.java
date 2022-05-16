@@ -15,6 +15,6 @@ public interface PatientProxy {
     List<PatientDTO> getPatients();
 
     @GetMapping("/{id}")
-    PatientDTO getPatientById(@PathVariable("id") Integer id);
+    PatientDTO getPatientById(@PathVariable("id") Long id);
 
 }

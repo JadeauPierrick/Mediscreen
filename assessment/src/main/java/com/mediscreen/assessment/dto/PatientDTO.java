@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PatientDTO {
 
-    int id;
+    Long id;
 
     @NotBlank
     String lastName;

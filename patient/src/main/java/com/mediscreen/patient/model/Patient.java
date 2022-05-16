@@ -22,7 +22,7 @@ public class Patient implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @NotBlank(message = "The last name is required")
     @Column(name = "last_name", length = 100)

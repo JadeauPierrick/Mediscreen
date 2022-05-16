@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PatientDTO implements Serializable {
 
-    int id;
+    Long id;
 
     @NotBlank
     String lastName;
