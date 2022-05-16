@@ -7,9 +7,7 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/Assessment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/utils/AgeCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/controller/AssessmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -20,16 +18,16 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assessment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/dto/PatientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000007" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/repository/PatientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/patient/sql/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,13 +75,44 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
-  <component name="RunManager" selected="JUnit.NoteServiceTest">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/patient/sql" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.AssessmentApplication">
+    <configuration name="AssessmentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.assessment.AssessmentApplication" />
+      <module name="assessment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mediscreen.assessment.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MedicalRecordApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mediscreen.medicalrecord.MedicalRecordApplication" />
       <module name="medical-record" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.mediscreen.medicalrecord.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PatientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.PatientApplication" />
+      <module name="patient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mediscreen.patient.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,21 +135,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PatientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="patient" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.mediscreen.patient.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.mediscreen.patient.service" />
-      <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.service.PatientServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="medical-record: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -129,26 +143,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="medical-record.mongo-express: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="mongo-express" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="medical-record/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NoteServiceTest" />
+        <item itemvalue="Application.AssessmentApplication" />
         <item itemvalue="Application.MedicalRecordApplication" />
+        <item itemvalue="Application.PatientApplication" />
+        <item itemvalue="JUnit.NoteServiceTest" />
         <item itemvalue="Docker.medical-record: Compose Deployment" />
-        <item itemvalue="Docker.medical-record.mongo-express: Compose Deployment" />
-        <item itemvalue="JUnit.PatientServiceTest" />
       </list>
     </recent_temporary>
   </component>
