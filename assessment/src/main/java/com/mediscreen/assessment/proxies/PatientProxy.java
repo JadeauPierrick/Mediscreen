@@ -17,4 +17,7 @@ public interface PatientProxy {
     @GetMapping("/{id}")
     PatientDTO getPatientById(@PathVariable("id") Long id);
 
+    @GetMapping("/family/{familyName}")
+    List<PatientDTO> getAllByLastName(@PathVariable("familyName") String familyName);
+
 }

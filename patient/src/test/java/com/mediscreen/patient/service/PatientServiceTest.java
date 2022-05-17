@@ -109,6 +109,13 @@ public class PatientServiceTest {
 
     @Test
     @Order(8)
+    public void getAllByLastName() {
+        List<PatientDTO> patientFamilyList = patientService.getAllByLastName(patient.getLastName());
+        assertThat(patientFamilyList.size()).isEqualTo(1);
+    }
+
+    @Test
+    @Order(9)
     public void updatePatient() throws PatientNotFoundException {
         PatientDTO patientDTO = patientService.getPatientById(6L);
         Patient patient = patientMapper.fromDTO(patientDTO);
@@ -121,7 +128,7 @@ public class PatientServiceTest {
     }
 
     @Test
-    @Order(9)
+    @Order(10)
     public void updatePatientWithNullId() {
         try {
             patientService.updatePatient(10L,patient);
@@ -131,7 +138,7 @@ public class PatientServiceTest {
     }
 
     @Test
-    @Order(10)
+    @Order(11)
     public void deletePatient() throws PatientNotFoundException {
         patientService.deletePatientById(6L);
         List<PatientDTO> patients = patientService.getPatients();
@@ -140,7 +147,7 @@ public class PatientServiceTest {
     }
 
     @Test
-    @Order(11)
+    @Order(12)
     public void deletePatientWithNullId() {
         try {
             patientService.deletePatientById(10L);

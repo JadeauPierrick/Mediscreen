@@ -15,6 +15,8 @@ public interface PatientService {
 
     PatientDTO getPatientByLastNameAndFirstNameAndBirthdate(String lastName, String firstName, LocalDate birthdate) throws PatientNotFoundException;
 
+    List<PatientDTO> getAllByLastName(String lastName);
+
     PatientDTO addPatient(PatientDTO patientDTO) throws PatientAlreadyExistingException;
 
     PatientDTO updatePatient(Long id, PatientDTO patientDTO) throws PatientNotFoundException;

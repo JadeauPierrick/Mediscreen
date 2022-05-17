@@ -27,6 +27,7 @@ public class PatientController {
     public ResponseEntity<List<PatientDTO>> getPatients() {
         List<PatientDTO> patients = patientService.getPatients();
         if (patients.isEmpty()) {
+            log.error("There is no patient");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(patients,HttpStatus.OK);
@@ -38,9 +39,19 @@ public class PatientController {
             PatientDTO patient = patientService.getPatientById(id);
             return new ResponseEntity<>(patient,HttpStatus.OK);
         } catch (PatientNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/family/{familyName}")
+    public ResponseEntity<List<PatientDTO>> getAllByLastName(@PathVariable("familyName") String familyName) {
+        List<PatientDTO> patients = patientService.getAllByLastName(familyName);
+        if (patients.isEmpty()) {
+            log.error("There is no patient for this family name : {}", familyName);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(patients,HttpStatus.OK);
     }
 
     @PostMapping("/add")
@@ -49,7 +60,7 @@ public class PatientController {
             PatientDTO newPatient = patientService.addPatient(patientDTO);
             return new ResponseEntity<>(newPatient,HttpStatus.OK);
         } catch (PatientAlreadyExistingException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
     }
@@ -60,7 +71,7 @@ public class PatientController {
             PatientDTO patientUpdated = patientService.updatePatient(id, patientDTO);
             return new ResponseEntity<>(patientUpdated,HttpStatus.OK);
         } catch (PatientNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -71,7 +82,7 @@ public class PatientController {
             patientService.deletePatientById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (PatientNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

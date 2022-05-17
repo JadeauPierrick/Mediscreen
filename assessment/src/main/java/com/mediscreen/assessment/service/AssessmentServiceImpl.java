@@ -54,6 +54,18 @@ public class AssessmentServiceImpl implements AssessmentService{
         return assessment;
     }
 
+    @Override
+    public List<Assessment> getAssessmentByFamilyName(String familyName) {
+        List<Assessment> result = new ArrayList<>();
+        List<PatientDTO> patients = patientProxy.getAllByLastName(familyName);
+
+        patients.forEach(patient ->
+                result.add(getAssessmentByPatientId(patient.getId())));
+
+        return result;
+    }
+
+
     private List<TriggerTerms> getPatientTriggerTerms(List<NoteDTO> notes) {
         List<TriggerTerms> result = new ArrayList<>();
         EnumSet<TriggerTerms> terms = EnumSet.allOf(TriggerTerms.class);

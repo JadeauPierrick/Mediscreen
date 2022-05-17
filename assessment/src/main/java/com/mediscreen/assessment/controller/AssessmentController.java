@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/assessment")
 public class AssessmentController {
@@ -23,5 +25,11 @@ public class AssessmentController {
     public ResponseEntity<Assessment> getPatientAssessment(@PathVariable("id") Long id) {
         Assessment assessment = assessmentService.getAssessmentByPatientId(id);
         return new ResponseEntity<>(assessment, HttpStatus.OK);
+    }
+
+    @GetMapping("/family/{familyName}")
+    public ResponseEntity<List<Assessment>> getFamilyAssessments(@PathVariable("familyName") String familyName) {
+        List<Assessment> familyAssessments = assessmentService.getAssessmentByFamilyName(familyName);
+        return new ResponseEntity<>(familyAssessments, HttpStatus.OK);
     }
 }

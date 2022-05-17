@@ -58,6 +58,12 @@ public class PatientServiceImpl implements PatientService{
     }
 
     @Override
+    public List<PatientDTO> getAllByLastName(String lastName) {
+        List<Patient> patients = patientRepository.findAllByLastName(lastName);
+        return patients.stream().map(patientMapper::toDTO).collect(Collectors.toList());
+    }
+
+    @Override
     public PatientDTO addPatient(PatientDTO patientDTO) throws PatientAlreadyExistingException {
         Optional<Patient> currentPatient = patientRepository.findByLastNameAndFirstNameAndBirthdate(patientDTO.getLastName(), patientDTO.getFirstName(), patientDTO.getBirthdate());
         if (currentPatient.isPresent()) {
