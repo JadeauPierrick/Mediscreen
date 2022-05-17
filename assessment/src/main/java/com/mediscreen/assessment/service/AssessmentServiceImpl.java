@@ -40,7 +40,7 @@ public class AssessmentServiceImpl implements AssessmentService{
         int age = ageCalculator.calculateAge(patient.getBirthdate());
         List<NoteDTO> notes = medicalRecordProxy.getAllNotesByPatientId(patientId);
         List<TriggerTerms> terms = getPatientTriggerTerms(notes);
-        RiskLevel riskLevel = getRiskLevel(patient, notes.size());
+        RiskLevel riskLevel = getRiskLevel(patient, terms.size());
 
         Assessment assessment = Assessment.builder()
                 .patientId(patientId)
@@ -54,8 +54,7 @@ public class AssessmentServiceImpl implements AssessmentService{
         return assessment;
     }
 
-    @Override
-    public List<TriggerTerms> getPatientTriggerTerms(List<NoteDTO> notes) {
+    private List<TriggerTerms> getPatientTriggerTerms(List<NoteDTO> notes) {
         List<TriggerTerms> result = new ArrayList<>();
         EnumSet<TriggerTerms> terms = EnumSet.allOf(TriggerTerms.class);
 
@@ -69,8 +68,7 @@ public class AssessmentServiceImpl implements AssessmentService{
         return result.stream().distinct().collect(Collectors.toList());
     }
 
-    @Override
-    public RiskLevel getRiskLevel(PatientDTO patient, int numberOfTriggers) {
+    private RiskLevel getRiskLevel(PatientDTO patient, int numberOfTriggers) {
         RiskLevel riskLevel = RiskLevel.NONE;
         int age = ageCalculator.calculateAge(patient.getBirthdate());
         Gender sex = patient.getSex();

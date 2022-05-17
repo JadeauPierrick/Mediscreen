@@ -7,7 +7,6 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/controller/AssessmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -17,17 +16,20 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assessment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000007" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000008" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/mongod.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/dto/PatientDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/patient/sql/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/patient/sql/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,8 +148,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.AssessmentApplication" />
-        <item itemvalue="Application.MedicalRecordApplication" />
         <item itemvalue="Application.PatientApplication" />
+        <item itemvalue="Application.MedicalRecordApplication" />
         <item itemvalue="JUnit.NoteServiceTest" />
         <item itemvalue="Docker.medical-record: Compose Deployment" />
       </list>
@@ -178,5 +180,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/service/AssessmentServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
