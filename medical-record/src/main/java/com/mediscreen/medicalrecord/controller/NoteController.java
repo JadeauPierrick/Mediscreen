@@ -3,6 +3,8 @@ package com.mediscreen.medicalrecord.controller;
 import com.mediscreen.medicalrecord.dto.NoteDTO;
 import com.mediscreen.medicalrecord.exceptions.NoteNotFoundException;
 import com.mediscreen.medicalrecord.service.NoteService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,7 @@ public class NoteController {
     }
 
     @GetMapping("/all")
+    @ApiOperation("Get all notes")
     public ResponseEntity<List<NoteDTO>> getNotes() {
         List<NoteDTO> notes = noteService.getNotes();
         if (notes.isEmpty()) {
@@ -32,7 +35,9 @@ public class NoteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<NoteDTO> getNoteById(@PathVariable("id") Long id) {
+    @ApiOperation("Get note information")
+    public ResponseEntity<NoteDTO> getNoteById(@ApiParam(value = "The id of the note", example = "1")
+                                                   @PathVariable("id") Long id) {
         try {
             NoteDTO noteDTO = noteService.getNoteById(id);
             return new ResponseEntity<>(noteDTO,HttpStatus.OK);
@@ -43,19 +48,24 @@ public class NoteController {
     }
 
     @GetMapping("/patient/{patientId}")
-    public ResponseEntity<List<NoteDTO>> getAllNotesByPatientId(@PathVariable("patientId") Long patientId) {
+    @ApiOperation("Get all the note of the patient by the patient id")
+    public ResponseEntity<List<NoteDTO>> getAllNotesByPatientId(@ApiParam(value = "The id of the patient", example = "1")
+                                                                    @PathVariable("patientId") Long patientId) {
         List<NoteDTO> notes = noteService.getAllNotesByPatientId(patientId);
         return new ResponseEntity<>(notes,HttpStatus.OK);
     }
 
     @PostMapping("/add")
+    @ApiOperation("Create a new note")
     public ResponseEntity<NoteDTO> addNote(@Valid @RequestBody NoteDTO noteDTO) {
         NoteDTO noteCreated = noteService.addNote(noteDTO);
         return new ResponseEntity<>(noteCreated,HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<NoteDTO> updateNote(@PathVariable("id") Long id, @Valid @RequestBody NoteDTO noteDTO) {
+    @ApiOperation("Update the note information")
+    public ResponseEntity<NoteDTO> updateNote(@ApiParam(value = "The id of the note", example = "1")
+                                                  @PathVariable("id") Long id, @Valid @RequestBody NoteDTO noteDTO) {
         try {
             NoteDTO noteUpdated = noteService.updateNote(id,noteDTO);
             return new ResponseEntity<>(noteUpdated,HttpStatus.OK);
@@ -66,7 +76,9 @@ public class NoteController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteNote(@PathVariable("id") Long id) {
+    @ApiOperation("Delete a note")
+    public ResponseEntity<Void> deleteNote(@ApiParam(value = "The id of the note", example = "1")
+                                               @PathVariable("id") Long id) {
         try {
             noteService.deleteNoteById(id);
             return new ResponseEntity<>(HttpStatus.OK);

@@ -7,10 +7,9 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assessment/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/configuration/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/configuration/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/configuration/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -20,9 +19,14 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/MedicalRecordProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/MedicalRecordProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/java/com/mediscreen/assessment/proxies/PatientProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/controller/PatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +73,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

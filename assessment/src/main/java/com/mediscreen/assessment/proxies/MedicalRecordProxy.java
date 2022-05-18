@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name = "medical-record-api", url = "${medical-record-api.url}")
 public interface MedicalRecordProxy {
 
-    @GetMapping("/patient/{patientId}")
+    @GetMapping("/note/patient/{patientId}")
     List<NoteDTO> getAllNotesByPatientId(@PathVariable("patientId") Long patientId);
 }

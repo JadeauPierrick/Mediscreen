@@ -4,6 +4,8 @@ import com.mediscreen.patient.dto.PatientDTO;
 import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
 import com.mediscreen.patient.service.PatientService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,7 @@ public class PatientController {
     }
 
     @GetMapping("/all")
+    @ApiOperation("Get all patients")
     public ResponseEntity<List<PatientDTO>> getPatients() {
         List<PatientDTO> patients = patientService.getPatients();
         if (patients.isEmpty()) {
@@ -34,7 +37,9 @@ public class PatientController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PatientDTO> getPatientById(@PathVariable("id") Long id) {
+    @ApiOperation("Get patient information by the id")
+    public ResponseEntity<PatientDTO> getPatientById(@ApiParam(value = "The id of the patient", example = "1")
+                                                         @PathVariable("id") Long id) {
         try {
             PatientDTO patient = patientService.getPatientById(id);
             return new ResponseEntity<>(patient,HttpStatus.OK);
@@ -45,7 +50,9 @@ public class PatientController {
     }
 
     @GetMapping("/family/{familyName}")
-    public ResponseEntity<List<PatientDTO>> getAllByLastName(@PathVariable("familyName") String familyName) {
+    @ApiOperation("Get the information of all members of a family by their last name")
+    public ResponseEntity<List<PatientDTO>> getAllByLastName(@ApiParam(value = "The family name", example = "Carter")
+                                                                 @PathVariable("familyName") String familyName) {
         List<PatientDTO> patients = patientService.getAllByLastName(familyName);
         if (patients.isEmpty()) {
             log.error("There is no patient for this family name : {}", familyName);
@@ -55,6 +62,7 @@ public class PatientController {
     }
 
     @PostMapping("/add")
+    @ApiOperation("Create a new patient")
     public ResponseEntity<PatientDTO> addPatient(@Valid @RequestBody PatientDTO patientDTO) {
         try {
             PatientDTO newPatient = patientService.addPatient(patientDTO);
@@ -65,8 +73,10 @@ public class PatientController {
         }
     }
 
-    @PostMapping("/update/{id}")
-    public ResponseEntity<PatientDTO> updatePatient(@PathVariable("id") Long id, @Valid @RequestBody PatientDTO patientDTO) {
+    @PutMapping("/update/{id}")
+    @ApiOperation("Update patient information")
+    public ResponseEntity<PatientDTO> updatePatient(@ApiParam(value = "The id of the patient", example = "1")
+                                                        @PathVariable("id") Long id, @Valid @RequestBody PatientDTO patientDTO) {
         try {
             PatientDTO patientUpdated = patientService.updatePatient(id, patientDTO);
             return new ResponseEntity<>(patientUpdated,HttpStatus.OK);
@@ -77,7 +87,9 @@ public class PatientController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deletePatientById(@PathVariable("id") Long id) {
+    @ApiOperation("Delete a patient")
+    public ResponseEntity<Void> deletePatientById(@ApiParam(value = "The id of the patient", example = "1")
+                                                      @PathVariable("id") Long id) {
         try {
             patientService.deletePatientById(id);
             return new ResponseEntity<>(HttpStatus.OK);
