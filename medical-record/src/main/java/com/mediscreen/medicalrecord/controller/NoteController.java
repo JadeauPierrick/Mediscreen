@@ -3,6 +3,7 @@ package com.mediscreen.medicalrecord.controller;
 import com.mediscreen.medicalrecord.dto.NoteDTO;
 import com.mediscreen.medicalrecord.exceptions.NoteNotFoundException;
 import com.mediscreen.medicalrecord.service.NoteService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/note")
+@RequestMapping("/notes")
+@Api(tags = "Medical record's data API")
 @Slf4j
 public class NoteController {
 
@@ -24,11 +26,12 @@ public class NoteController {
         this.noteService = noteService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     @ApiOperation("Get all notes")
     public ResponseEntity<List<NoteDTO>> getNotes() {
         List<NoteDTO> notes = noteService.getNotes();
         if (notes.isEmpty()) {
+            log.error("There is no note");
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(notes,HttpStatus.OK);
@@ -42,7 +45,7 @@ public class NoteController {
             NoteDTO noteDTO = noteService.getNoteById(id);
             return new ResponseEntity<>(noteDTO,HttpStatus.OK);
         } catch (NoteNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -70,7 +73,7 @@ public class NoteController {
             NoteDTO noteUpdated = noteService.updateNote(id,noteDTO);
             return new ResponseEntity<>(noteUpdated,HttpStatus.OK);
         } catch (NoteNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
@@ -83,7 +86,7 @@ public class NoteController {
             noteService.deleteNoteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (NoteNotFoundException e) {
-            log.info(e.getMessage());
+            log.error(e.getMessage());
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

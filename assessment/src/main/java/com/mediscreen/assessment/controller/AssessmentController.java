@@ -2,6 +2,7 @@ package com.mediscreen.assessment.controller;
 
 import com.mediscreen.assessment.dto.Assessment;
 import com.mediscreen.assessment.service.AssessmentService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/assessment")
+@Api(tags = "Assessment's data API")
 public class AssessmentController {
 
     private final AssessmentService assessmentService;

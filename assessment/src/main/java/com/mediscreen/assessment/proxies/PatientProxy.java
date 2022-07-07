@@ -14,10 +14,10 @@ public interface PatientProxy {
     @GetMapping(value = "/all")
     List<PatientDTO> getPatients();
 
-    @GetMapping("/patient/{id}")
+    @GetMapping("/patients/{id}")
     PatientDTO getPatientById(@PathVariable("id") Long id);
 
-    @GetMapping("/patient/family/{familyName}")
+    @GetMapping("/patients/family/{familyName}")
     List<PatientDTO> getAllByLastName(@PathVariable("familyName") String familyName);
 
 }

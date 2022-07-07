@@ -12,7 +12,9 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NoteDTO implements Serializable {
 
-    long id;
+    private static final long serialVersionUID = 1L;
+
+    Long id;
 
     int patientId;
 

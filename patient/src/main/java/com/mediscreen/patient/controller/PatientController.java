@@ -4,6 +4,7 @@ import com.mediscreen.patient.dto.PatientDTO;
 import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
 import com.mediscreen.patient.service.PatientService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/patients")
+@Api(tags = "Patient's data API")
 @Slf4j
 public class PatientController {
 
@@ -25,7 +27,7 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("")
     @ApiOperation("Get all patients")
     public ResponseEntity<List<PatientDTO>> getPatients() {
         List<PatientDTO> patients = patientService.getPatients();

@@ -16,7 +16,7 @@ services:
     ports:
       - '3307:3306'
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./patient/sql/schema.sql:/docker-entrypoint-initdb.d/schema.sql
 
   patient-service:
     container_name: patient-service
@@ -47,7 +47,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - mongodb-data:/data/db
+      - ./data:/data/db
 
   medical-record-service:
     container_name: medical-record-service
