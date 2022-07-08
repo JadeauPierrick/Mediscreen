@@ -47,7 +47,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - ./data:/data/db
+      - ./medical-record/data:/data/db
 
   medical-record-service:
     container_name: medical-record-service
