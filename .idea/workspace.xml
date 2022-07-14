@@ -19,15 +19,10 @@
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.2022-07-08T09-28-56Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.2022-07-08T09-28-56Z-00000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.interim" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.interim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.interim" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediscreenapp/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/mediscreenapp/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/mongod.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

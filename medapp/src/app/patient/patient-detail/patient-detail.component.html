@@ -1,0 +1,46 @@
+<ng-container *ngIf="patient" class="row">
+    <div class="card">
+        <h3 class="card-header">Patient selected</h3>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td><strong>Id</strong></td>
+                        <td>{{ patient.id }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Last Name</strong></td>
+                        <td>{{ patient.lastName }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First Name</strong></td>
+                        <td>{{ patient.firstName }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Birthdate</strong></td>
+                        <td>{{ patient.birthdate }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sex</strong></td>
+                        <td>{{ patient.sex }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Address</strong></td>
+                        <td>{{ patient.address }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone</strong></td>
+                        <td>{{ patient.phone }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <button (click)="comeBackToPatientList()" type="button" class="btn btn-secondary" id='closeModal' data-bs-dismiss="modal">Cancel</button>
+            <button [routerLink]="['/patients/update', patient.id]" type="button" class="btn btn-success" id="update">Update</button>
+        </div>
+    </div>
+</ng-container>
+<h4 *ngIf="!patient" class="center">No patient to display !</h4>
+
+

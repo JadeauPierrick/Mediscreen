@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-6">
+                <h5>{{ assessment.patientFirstName }} {{ assessment.patientLastName }}</h5>
+            </div>
+            <div class="col-sm-6">
+                <h5 id="age">{{ assessment.age }} years</h5>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <h4 class="text-center">{{ assessment.riskLevel }}</h4>
+        <p *ngIf="assessment.terms.length === 0" class="text-center">No factors</p>
+        <p *ngFor="let term of assessment.terms" class="text-center">{{ term }}</p>
+    </div>
+    <div class="card-footer">
+        <button (click)="comeBackToPatientList()" type="button" class="btn btn-secondary" id='closeModal' data-bs-dismiss="modal">Cancel</button>
+    </div>
+</div>
+

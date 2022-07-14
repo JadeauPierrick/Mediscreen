@@ -1,0 +1,3 @@
+export enum RiskLevel {
+    NONE = 'NONE', BORDELINE = 'BORDERLINE', IN_DANGER = 'IN_DANGER', EARLY_ONSET = 'EARLY_ONSET'
+}

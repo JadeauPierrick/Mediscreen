@@ -1,0 +1,14 @@
+.card {
+    margin: auto;
+    width: 70%;
+    border-radius: 3px 3px 0 0;
+}
+
+.card-header, .card-footer {
+    background: #074c68;
+    color: #fff;
+}
+
+#update {
+    float: right;
+}

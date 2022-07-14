@@ -1,0 +1,19 @@
+.card {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 2em;
+    border-radius: 3px 3px 0 0;
+}
+
+.card-header, .card-footer {
+    background: #074c68;
+    color: #fff;
+}
+
+h4 {
+    margin-bottom: 2ex;
+}
+
+#age {
+    float: right;
+}

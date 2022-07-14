@@ -1,0 +1,33 @@
+.navbar, .card {
+    margin: auto;
+    width: 70%;
+    margin-bottom: 2em;
+    border-radius: 3px 3px 0 0;
+}
+
+.navbar {
+    background: #fff;
+}
+
+.card-header, .card-footer {
+    background: #074c68;
+    color: #fff;
+}
+
+.dateUpdated {
+    float: right;
+    color: grey;
+}
+
+.update {
+    float: right;
+    color: #fff;
+}
+
+.delete {
+    color: red;
+}
+
+.navbar-text {
+    color: #074c68;
+}

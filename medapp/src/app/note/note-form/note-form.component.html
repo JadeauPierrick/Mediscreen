@@ -1,0 +1,35 @@
+<form [formGroup]="noteForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="card">
+        <div class="card-header">
+            <h3 *ngIf="statusForm === statusFormEnum.CREATE">New Note</h3>
+            <h3 *ngIf="statusForm === statusFormEnum.UPDATE">Note to update</h3>
+        </div>
+        <div class="card-body">
+            <div *ngIf="statusForm === statusFormEnum.UPDATE" class="form-group">
+                <label for="id"><strong>Id</strong></label>
+                <input type="number" id="id" class="form-control" formControlName="id" [attr.disabled]="true">
+            </div>
+            <div class="form-group">
+                <label for="patientId"><strong>Patient Id</strong></label>
+                <input type="number" id="patientId" class="form-control" formControlName="patientId">
+            </div>
+            <div *ngIf="statusForm === statusFormEnum.UPDATE" class="form-group">
+                <label for="createdAt"><strong>Created At</strong></label>
+                <input type="text" id="createdAt" class="form-control" formControlName="createdAt" [attr.disabled]="true">
+            </div>
+            <div *ngIf="statusForm === statusFormEnum.UPDATE" class="form-group">
+                <label for="updatedAt"><strong>Updated At</strong></label>
+                <input type="text" id="updatedAt" class="form-control" formControlName="updatedAt" [attr.disabled]="true">
+            </div>
+            <div class="form-group">
+                <label for="content"><strong>Content</strong></label>
+                <textarea type="text" id="content" class="form-control" formControlName="content"></textarea>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button (click)="cancel()" type="button" class="btn btn-secondary" id='closeModal' data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" [disabled]="!noteForm.valid" class="btn btn-success" id="save">Save</button>
+        </div>
+    </div>
+</form>
+

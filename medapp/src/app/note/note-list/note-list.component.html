@@ -1,0 +1,39 @@
+<ng-container *ngIf="notes" [ngSwitch]="dataState">
+    <ng-container *ngSwitchCase="dataStateEnum.LOADING_STATE">
+        <div class="col-md-12 single-note-item text-center">
+            <div class="spinner-border text-info" role="status"></div>
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="dataStateEnum.LOADED_STATE">
+        <nav class="navbar">
+            <div class="container-fluid">
+                <button (click)="comeBackToPatientList()" type="button" class="btn btn-secondary" id='closeModal' data-bs-dismiss="modal">Cancel</button>
+                <h5 *ngIf="!notes" class="navbar-text">There is no note for : {{ patient.firstName }} {{ patient.lastName }}</h5>
+                <h5 class="navbar-text">Notes of : {{ patient.firstName }} {{ patient.lastName }}</h5>
+                <button [routerLink]="['notes/add']" class="btn btn-success" type="button" data-toggle="modal">New Note</button>
+            </div>
+        </nav>
+        <div *ngFor="let note of notes" class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>{{ note.createdAt }}</h5>
+                    </div>
+                    <div *ngIf="note.createdAt !== note.updatedAt" class="col-sm-6">
+                        <p class="dateUpdated">Modified on : {{ note.updatedAt }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{ note.content }}</p>
+            </div>
+            <div class="card-footer">
+                <a (click)="deleteNote(note)" class="delete" data-toggle="modal"
+                style="cursor: pointer;"><i class="material-symbols-outlined">delete</i></a>
+                <a [routerLink]="['notes/update', note.id]" class="update" data-toggle="modal"
+                style="cursor: pointer;"><i class="material-symbols-outlined">update</i></a>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
+
