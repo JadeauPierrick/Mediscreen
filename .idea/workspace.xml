@@ -15,22 +15,20 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_9_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/src/app/assessment/assessment-detail/assessment-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/assessment/assessment-detail/assessment-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/src/app/note/note-form/note-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/note/note-form/note-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-detail/patient-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-detail/patient-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-form/patient-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-form/patient-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-list/patient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-list/patient-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/assessment/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000013" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +81,7 @@
       <recent name="$PROJECT_DIR$/patient/sql" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PatientApplication">
+  <component name="RunManager" selected="JUnit.PatientServiceTest">
     <configuration name="AssessmentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mediscreen.assessment.AssessmentApplication" />
       <module name="assessment" />
@@ -138,21 +136,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="medical-record: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="medical-record/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
+    <configuration name="PatientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="patient" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mediscreen.patient.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mediscreen.patient.service" />
+      <option name="MAIN_CLASS_NAME" value="com.mediscreen.patient.service.PatientServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PatientServiceTest" />
         <item itemvalue="Application.PatientApplication" />
         <item itemvalue="Application.MedicalRecordApplication" />
         <item itemvalue="Application.AssessmentApplication" />
         <item itemvalue="JUnit.NoteServiceTest" />
-        <item itemvalue="Docker.medical-record: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
