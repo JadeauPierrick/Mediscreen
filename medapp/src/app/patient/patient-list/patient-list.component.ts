@@ -17,7 +17,7 @@ export class PatientListComponent implements OnInit {
   constructor(private patientService: PatientService) { }
 
   ngOnInit(): void {
-    this.patientService.getPatients().subscribe(patientList => this.patients = patientList);
+    this.patientService.getPatients().subscribe((patientList: Patient[]) => this.patients = patientList);
     this.dataState = DataState.LOADED_STATE;
   }
 

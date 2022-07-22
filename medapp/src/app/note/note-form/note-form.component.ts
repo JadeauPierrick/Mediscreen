@@ -62,9 +62,9 @@ export class NoteFormComponent implements OnInit {
   onSubmit() {
     const form = {...this.noteForm.value} as Note;
     if(this.statusForm === StatusFormEnum.CREATE) {
-      this.noteService.add(form).subscribe(note => this.router.navigate(['/patients/note', note.patientId]));
+      this.noteService.add(form).subscribe((note: Note) => this.router.navigate(['/patients/note', note.patientId]));
     } else if(this.statusForm === StatusFormEnum.UPDATE){
-      this.noteService.update(this.note.id, form).subscribe(note => this.router.navigate(['/patients/note', note.patientId]));  
+      this.noteService.update(this.note.id, form).subscribe((note: Note) => this.router.navigate(['/patients/note', note.patientId]));  
     }
   }
 

@@ -66,9 +66,9 @@ export class PatientFormComponent implements OnInit {
   onSubmit() {
     const form = {...this.patientForm.value} as Patient;
     if(this.statusForm === StatusFormEnum.CREATE) {
-      this.patientService.add(form).subscribe(patient => this.router.navigate([patient.id]));
+      this.patientService.add(form).subscribe((patient: Patient) => this.router.navigate([patient.id]));
     } else if(this.statusForm === StatusFormEnum.UPDATE){
-      this.patientService.update(this.patient.id, form).subscribe(patient => this.router.navigate(['/patients', patient.id]));  
+      this.patientService.update(this.patient.id, form).subscribe((patient: Patient) => this.router.navigate(['/patients', patient.id]));  
     }
   }
 

@@ -81,9 +81,15 @@ services:
     ports:
       - '8080:8080'
 
-volumes:
-  mysql-data:
-  mongodb-data:
+  angular:
+    container_name: front
+    build: medapp/
+    depends_on:
+      - assessment-service
+    networks:
+      - mediscreen-network
+    ports:
+      - "4200:4200"
 
 networks:
   mediscreen-network:

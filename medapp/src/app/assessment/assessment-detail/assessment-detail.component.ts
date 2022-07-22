@@ -22,9 +22,7 @@ export class AssessmentDetailComponent implements OnInit {
     const patientId: string|null = this.route.snapshot.paramMap.get('patientId');
     if(patientId) {
       this.assessmentService.getAssessment(+patientId)
-      .subscribe((result: Assessment) => {
-        console.log(result);
-        this.assessment = result});
+      .subscribe((result: Assessment) => this.assessment = result);
     }
   }
 

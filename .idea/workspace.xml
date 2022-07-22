@@ -15,14 +15,22 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/DataService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/src/app/assessment/assessment-detail/assessment-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/assessment/assessment-detail/assessment-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/src/app/note/note-form/note-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/note/note-form/note-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-detail/patient-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-detail/patient-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-form/patient-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-form/patient-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medapp/src/app/patient/patient-list/patient-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/medapp/src/app/patient/patient-list/patient-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.2022-07-08T09-28-56Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.2022-07-08T09-28-56Z-00000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/diagnostic.data/metrics.interim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/data/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/mongod.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000011" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,5 +181,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/mediscreenapp" />
+    </ignored-roots>
   </component>
 </project>
