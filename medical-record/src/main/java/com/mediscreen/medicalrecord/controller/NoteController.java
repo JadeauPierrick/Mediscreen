@@ -55,6 +55,10 @@ public class NoteController {
     public ResponseEntity<List<NoteDTO>> getAllNotesByPatientId(@ApiParam(value = "The id of the patient", example = "1")
                                                                     @PathVariable("patientId") Long patientId) {
         List<NoteDTO> notes = noteService.getAllNotesByPatientId(patientId);
+        if (notes.isEmpty()) {
+            log.error("There is no note for this patient id : {}", patientId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(notes,HttpStatus.OK);
     }
 

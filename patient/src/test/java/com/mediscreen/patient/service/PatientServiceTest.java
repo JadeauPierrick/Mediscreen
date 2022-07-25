@@ -53,7 +53,7 @@ public class PatientServiceTest {
         patientService.addPatient(patient);
         List<PatientDTO> patients = patientService.getPatients();
 
-        assertThat(patients.get(4).getLastName()).isEqualTo("Garrix");
+        assertThat(patients.get(5).getLastName()).isEqualTo("Garrix");
     }
 
     @Test
@@ -70,14 +70,14 @@ public class PatientServiceTest {
     @Order(3)
     public void getPatients() {
         List<PatientDTO> patients = patientService.getPatients();
-        assertThat(patients.size()).isEqualTo(5);
+        assertThat(patients.size()).isEqualTo(6);
     }
 
     @Test
     @Order(4)
     public void getPatientById() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(5L);
-        assertThat(patientDTO.getId()).isEqualTo(5);
+        PatientDTO patientDTO = patientService.getPatientById(7L);
+        assertThat(patientDTO.getId()).isEqualTo(7);
     }
 
     @Test
@@ -117,14 +117,14 @@ public class PatientServiceTest {
     @Test
     @Order(9)
     public void updatePatient() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(5L);
+        PatientDTO patientDTO = patientService.getPatientById(7L);
         Patient patient = patientMapper.fromDTO(patientDTO);
         patient.setAddress("6 St Sun");
 
         patientService.updatePatient(patient.getId(),patientMapper.toDTO(patient));
         List<PatientDTO> patients = patientService.getPatients();
 
-        assertThat(patients.get(4).getAddress()).isEqualTo("6 St Sun");
+        assertThat(patients.get(5).getAddress()).isEqualTo("6 St Sun");
     }
 
     @Test
@@ -140,10 +140,10 @@ public class PatientServiceTest {
     @Test
     @Order(11)
     public void deletePatient() throws PatientNotFoundException {
-        patientService.deletePatientById(5L);
+        patientService.deletePatientById(7L);
         List<PatientDTO> patients = patientService.getPatients();
 
-        assertThat(patients.size()).isEqualTo(4);
+        assertThat(patients.size()).isEqualTo(5);
     }
 
     @Test
