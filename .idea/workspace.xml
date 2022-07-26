@@ -7,13 +7,7 @@
     <list default="true" id="4b8e3843-b9f0-4660-a7aa-5fd6f450a977" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../JoffreyEx/.idea/JoffreyEx.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Poseidon/poseidon/src/main/java/com/springapp/poseidon/configuration/SpringSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nl_jqno_equalsverifier_equalsverifier_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/medical-record/src/test/java/com/mediscreen/medicalrecord/controller/NoteControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medical-record/src/test/java/com/mediscreen/medicalrecord/dto/NoteDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/controller/PatientControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/dto/PatientDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/model/PatientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/SafetynetalertsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/model/Firestation.java" afterDir="false" />
@@ -23,9 +17,17 @@
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/java/com/safetynet/safetynetalerts/service/ReadJSONFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Projet 5/safetynetalerts/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/src/main/java/com/mediscreen/medicalrecord/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patient/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-2--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/collection-4--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-3--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-5--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/index-6--8889236612373773629.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/journal/WiredTigerLog.0000000018" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" beforeDir="false" afterPath="$PROJECT_DIR$/medical-record/data/sizeStorer.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/main/java/com/mediscreen/patient/service/PatientServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/patient/src/test/java/com/mediscreen/patient/service/PatientServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +89,7 @@
       <recent name="$PROJECT_DIR$/patient/sql" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PatientTest">
+  <component name="RunManager" selected="JUnit.PatientServiceTest">
     <configuration name="NoteControllerTest.getNoteByNullId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="medical-record" />
       <extension name="coverage">
@@ -167,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PatientServiceTest" />
         <item itemvalue="JUnit.PatientTest" />
         <item itemvalue="JUnit.NoteControllerTest.getNoteByNullId" />
         <item itemvalue="JUnit.PatientTest.testPatient" />
         <item itemvalue="JUnit.PatientControllerTest" />
-        <item itemvalue="JUnit.PatientServiceTest" />
       </list>
     </recent_temporary>
   </component>

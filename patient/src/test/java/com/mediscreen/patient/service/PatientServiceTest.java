@@ -6,21 +6,31 @@ import com.mediscreen.patient.exceptions.PatientAlreadyExistingException;
 import com.mediscreen.patient.exceptions.PatientNotFoundException;
 import com.mediscreen.patient.mapper.PatientMapper;
 import com.mediscreen.patient.model.Patient;
+import com.mediscreen.patient.repository.PatientRepository;
 import org.junit.jupiter.api.*;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.mockito.Mockito.*;
 
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class PatientServiceTest {
 
+    @MockBean
+    private PatientRepository patientRepository;
 
     private final PatientService patientService;
 
@@ -32,11 +42,21 @@ public class PatientServiceTest {
         this.patientMapper = patientMapper;
     }
 
-    private PatientDTO patient;
+    private Patient patient;
+    private PatientDTO patientDTO;
+    private List<Patient> patientList = new ArrayList<>();
 
     @BeforeAll
     private void setUp() {
-        patient = PatientDTO.builder()
+
+        patient = new Patient();
+        patient.setId(22L);
+        patient.setLastName("Poupe");
+        patient.setFirstName("Paul");
+        patient.setBirthdate(LocalDate.now());
+        patientList.add(patient);
+
+        patientDTO = PatientDTO.builder()
                 .id(21L)
                 .lastName("Garrix")
                 .firstName("Martin")
@@ -48,111 +68,76 @@ public class PatientServiceTest {
     }
 
     @Test
-    @Order(1)
-    public void addPatient() throws PatientAlreadyExistingException {
-        patientService.addPatient(patient);
-        List<PatientDTO> patients = patientService.getPatients();
-
-        assertThat(patients.get(5).getLastName()).isEqualTo("Garrix");
-    }
-
-    @Test
-    @Order(2)
-    public void savePatientWithExistingPatient() {
-        try {
-            patientService.addPatient(patient);
-        } catch (PatientAlreadyExistingException e) {
-            assertThat(e.getMessage()).contains("The patient is already exist");
-        }
-    }
-
-    @Test
-    @Order(3)
     public void getPatients() {
-        List<PatientDTO> patients = patientService.getPatients();
-        assertThat(patients.size()).isEqualTo(6);
+        when(patientRepository.findAll()).thenReturn(patientList);
+        List<PatientDTO> patientDTOList = patientList.stream().map(patientMapper::toDTO).collect(Collectors.toList());
+        assertThat(patientService.getPatients()).isEqualTo(patientDTOList);
     }
 
     @Test
-    @Order(4)
     public void getPatientById() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(7L);
-        assertThat(patientDTO.getId()).isEqualTo(7);
+        when(patientRepository.findById(patient.getId())).thenReturn(Optional.of(patient));
+        assertThat(patientService.getPatientById(patient.getId())).isEqualTo(patientMapper.toDTO(patient));
     }
 
     @Test
-    @Order(5)
     public void getPatientWithNullId() {
-        try {
-            patientService.getPatientById(10L);
-        } catch (PatientNotFoundException e) {
-            assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
-        }
+        when(patientRepository.findById(patient.getId())).thenReturn(Optional.empty());
+        assertThatThrownBy(() -> patientService.getPatientById(patient.getId())).isInstanceOf(PatientNotFoundException.class);
     }
 
     @Test
-    @Order(6)
     public void getPatientByLastNameAndFirstNameAndBirthdate() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientByLastNameAndFirstNameAndBirthdate(patient.getLastName(), patient.getFirstName(), patient.getBirthdate());
-        assertThat(patientDTO.getFirstName()).isEqualTo(patient.getFirstName());
+        when(patientRepository.findByLastNameAndFirstNameAndBirthdate(patient.getLastName(), patient.getFirstName(), patient.getBirthdate()))
+                .thenReturn(Optional.of(patient));
+        assertThat(patientService.getPatientByLastNameAndFirstNameAndBirthdate(patient.getLastName(), patient.getFirstName(), patient.getBirthdate()))
+                .isEqualTo(patientMapper.toDTO(patient));
     }
 
     @Test
-    @Order(7)
     public void getPatientByLastNameAndFirstNameAndBirthdateWithNullLastName() {
-        try {
-            patientService.getPatientByLastNameAndFirstNameAndBirthdate("Carment", patient.getLastName(), patient.getBirthdate());
-        } catch (PatientNotFoundException e) {
-            assertThat(e.getMessage()).contains("The patient with these information : " + "Carment" + " " + patient.getLastName() + " " + patient.getBirthdate() + " was not found");
-        }
+        when(patientRepository.findByLastNameAndFirstNameAndBirthdate(patient.getLastName(), patient.getFirstName(), patient.getBirthdate()))
+                .thenReturn(Optional.empty());
+        assertThatThrownBy(() -> patientService.getPatientByLastNameAndFirstNameAndBirthdate(patient.getLastName(), patient.getFirstName(), patient.getBirthdate()))
+                .isInstanceOf(PatientNotFoundException.class);
     }
 
     @Test
-    @Order(8)
     public void getAllByLastName() {
-        List<PatientDTO> patientFamilyList = patientService.getAllByLastName(patient.getLastName());
-        assertThat(patientFamilyList.size()).isEqualTo(1);
+        when(patientRepository.findAllByLastName(patient.getLastName())).thenReturn(patientList);
+        List<PatientDTO> patientDTOList = patientList.stream().map(patientMapper::toDTO).collect(Collectors.toList());
+        assertThat(patientService.getAllByLastName(patient.getLastName())).isEqualTo(patientDTOList);
     }
 
     @Test
-    @Order(9)
+    public void addPatient() throws PatientAlreadyExistingException {
+        patientService.addPatient(patientDTO);
+        verify(patientRepository, Mockito.times(1)).save(patientMapper.fromDTO(patientDTO));
+    }
+
+    @Test
     public void updatePatient() throws PatientNotFoundException {
-        PatientDTO patientDTO = patientService.getPatientById(7L);
-        Patient patient = patientMapper.fromDTO(patientDTO);
-        patient.setAddress("6 St Sun");
-
-        patientService.updatePatient(patient.getId(),patientMapper.toDTO(patient));
-        List<PatientDTO> patients = patientService.getPatients();
-
-        assertThat(patients.get(5).getAddress()).isEqualTo("6 St Sun");
+        when(patientRepository.findById(patientDTO.getId())).thenReturn(Optional.of(patientMapper.fromDTO(patientDTO)));
+        patientService.updatePatient(patientDTO.getId(), patientDTO);
+        verify(patientRepository, Mockito.times(1)).save(patientMapper.fromDTO(patientDTO));
     }
 
     @Test
-    @Order(10)
     public void updatePatientWithNullId() {
-        try {
-            patientService.updatePatient(10L,patient);
-        } catch (PatientNotFoundException e) {
-            assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
-        }
+        when(patientRepository.findById(patientDTO.getId())).thenReturn(Optional.empty());
+        assertThatThrownBy(() -> patientService.updatePatient(patientDTO.getId(), patientDTO)).isInstanceOf(PatientNotFoundException.class);
     }
 
     @Test
-    @Order(11)
     public void deletePatient() throws PatientNotFoundException {
-        patientService.deletePatientById(7L);
-        List<PatientDTO> patients = patientService.getPatients();
-
-        assertThat(patients.size()).isEqualTo(5);
+        when(patientRepository.findById(patient.getId())).thenReturn(Optional.of(patient));
+        patientService.deletePatientById(patient.getId());
+        verify(patientRepository, Mockito.times(1)).deleteById(patient.getId());
     }
 
     @Test
-    @Order(12)
     public void deletePatientWithNullId() {
-        try {
-            patientService.deletePatientById(10L);
-        } catch (PatientNotFoundException e) {
-            assertThat(e.getMessage()).contains("The patient with the id : " + 10 + " was not found");
-        }
+        doThrow(EmptyResultDataAccessException.class).when(patientRepository).deleteById(patientDTO.getId());
+        assertThatThrownBy(() -> patientService.deletePatientById(patientDTO.getId())).isInstanceOf(PatientNotFoundException.class);
     }
 }

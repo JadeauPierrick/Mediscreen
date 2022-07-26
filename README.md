@@ -21,7 +21,7 @@ https://www.docker.com/products/docker-desktop/
 
 3.Run `docker-compose up --build -d`
 
-4.Open your browser and enter the following URL : `http://localhost:4200`
+4.Open your browser and enter the following URL : `http://localhost:4200/patients`
 
 5.Stop the application by using `docker-compose down`
 
